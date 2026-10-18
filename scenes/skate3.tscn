@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://7ed2gk6bbrv4"]
+
+[ext_resource type="PackedScene" uid="uid://b7mx4wspgkln" path="res://models/skate.glb" id="1_481v1"]
+
+[node name="skate" unique_id=1871703374 instance=ExtResource("1_481v1")]

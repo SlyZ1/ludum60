@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cs1k6aib2t1s0"]
+
+[ext_resource type="PackedScene" uid="uid://dv7ebwkfj4bwr" path="res://prefabs/skate.glb" id="2_ds2o7"]
+[ext_resource type="Shader" uid="uid://c15d0s27ce88v" path="res://stylized_af.gdshader" id="2_vlmd8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2ushs"]
+lightmap_size_hint = Vector2i(17, 9)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ds2o7"]
+noise_type = 2
+seed = 1
+frequency = 0.02
+offset = Vector3(194.69, 0, 0)
+fractal_octaves = 4
+fractal_lacunarity = 1.51
+fractal_gain = 0.72
+cellular_distance_function = 3
+cellular_jitter = 1.67
+cellular_return_type = 0
+domain_warp_frequency = 0.03
+domain_warp_fractal_octaves = 3
+domain_warp_fractal_gain = 0.14
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gyqy1"]
+noise = SubResource("FastNoiseLite_ds2o7")
+
+[sub_resource type="Gradient" id="Gradient_gyqy1"]
+offsets = PackedFloat32Array(0, 0.0030030012, 0.34234235, 0.34534535, 0.6546547, 0.6576577, 0.6606607, 0.6636637, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3102041, 0.3102041, 0.3102041, 1, 0.3586675, 0.3586675, 0.3586675, 1, 0.57568157, 0.57568157, 0.57568157, 1, 0.8712742, 0.8712742, 0.8712742, 1, 0.5568628, 0.5568628, 0.5568628, 1, 0.556953, 0.556953, 0.556953, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gyqy1"]
+gradient = SubResource("Gradient_gyqy1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkdvy"]
+render_priority = 0
+shader = ExtResource("2_vlmd8")
+shader_parameter/noise = SubResource("NoiseTexture2D_gyqy1")
+shader_parameter/palette = SubResource("GradientTexture1D_gyqy1")
+shader_parameter/sig = 0.31
+
+[node name="YoupiDesShaders" type="Node3D" unique_id=1331287623]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1733232277]
+transform = Transform3D(3.21, 0, 0, 0, 3.21, 0, 0, 0, 3.21, 4.1703224, 0.7541306, 0)
+mesh = SubResource("SphereMesh_2ushs")
+surface_material_override/0 = SubResource("ShaderMaterial_xkdvy")
+
+[node name="skate" parent="." unique_id=707180338 instance=ExtResource("2_ds2o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9914055, 0, 0.553463)
+visible = false

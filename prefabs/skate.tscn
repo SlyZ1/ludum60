@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhrwk24kr7uqb" path="res://scripts/skate_orientation.gd" id="1_sgunh"]
 [ext_resource type="Script" uid="uid://bgwv5b1vd00jg" path="res://scripts/anim_controller.gd" id="2_2wimw"]
-[ext_resource type="PackedScene" uid="uid://b7mx4wspgkln" path="res://models/skate.glb" id="2_ke4g0"]
+[ext_resource type="PackedScene" uid="uid://dqbibo65s0xsy" path="res://scenes/skate2.tscn" id="2_ke4g0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tnd71"]
 radius = 1.0
@@ -54,8 +54,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xi3o1")
 shape = SubResource("BoxShape3D_tnd71")
 target_position = Vector3(0, 0, 0)
 
-[node name="skate" parent="Skate" unique_id=70394129 instance=ExtResource("2_ke4g0")]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 3.5527137e-15, 0, 0.73553693, 0, -0.26350078, 0)
+[node name="skate2" parent="Skate" unique_id=707180338 instance=ExtResource("2_ke4g0")]
+transform = Transform3D(1.1000001, 0, 3.5527137e-15, 0, 1.03, 0, 3.5527137e-15, 0, 0.72, 0, -0.27399707, 0)
 
 [node name="AnimController" type="Node" parent="." unique_id=671014669 node_paths=PackedStringArray("mesh_instance")]
 script = ExtResource("2_2wimw")
